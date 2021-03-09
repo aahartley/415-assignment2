@@ -84,7 +84,7 @@ class TCPServer2 {
                     outToClient.writeBytes(serverSentence);                }
        
                 else if(temp[1].equals("/")) {
-        			Path inFilePath = Paths.get("src/index.html");
+        			Path inFilePath = Paths.get("index.html");
                 	File myFile = new File(inFilePath.toString());
                 	responseLine ="HTTP/1.1 200 OK\r\n";
                 	type="Content-Type: text/html\r\n";
@@ -98,7 +98,7 @@ class TCPServer2 {
               
                 else {
                 	//game.html from https://www.w3schools.com/graphics/tryit.asp?filename=trygame_default_gravity
-                	Path inFilePath = Paths.get("src/"+temp[1]);
+                	Path inFilePath = Paths.get(temp[1].substring(1, temp[1].length()));
                 	try {
                 		File myFile = new File(inFilePath.toString());
                     	byte[] buffer = Files.readAllBytes(inFilePath);
