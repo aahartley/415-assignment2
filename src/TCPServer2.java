@@ -64,7 +64,7 @@ class TCPServer2 {
                 	valid = true;
                 System.out.println("File path: "+ temp[1]);
                 if(!valid) {
-                	 serverSentence = "HTTP/1.1 400 Bad Request\r\nContent-Type: text/html\r\nContent-Length: 0\r\n\r\n"; //clientSentence.toUpperCase();  //change to uppercase 
+                	 serverSentence = "HTTP/1.1 400 Bad Request\r\nContent-Type: text/html\r\nContent-Length: 0\r\n\r\n";  
                      outToClient.writeBytes(serverSentence);
                 }
                 else {
